@@ -1,16 +1,14 @@
 var express = require('express');
 var router = express.Router();
-const https = require('https');
+const https = require('http');
 const fs = require('fs');
 
   
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let options = {
-    port: 443,
+    port: 80,
     method: 'GET',
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem'),
   };
 
   if (req.query.account == 'id4' || req.query.account == 'id5') {
