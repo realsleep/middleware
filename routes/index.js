@@ -9,8 +9,8 @@ router.get('/', function(req, res, next) {
   let options = {
     port: 443,
     method: 'GET',
-    key: fs.readFileSync('../key.pem'),
-    cert: fs.readFileSync('../cert.pem'),
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem'),
   };
 
   if (req.query.account == 'id4' || req.query.account == 'id5') {
