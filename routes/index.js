@@ -27,7 +27,6 @@ router.get('/', function(req, res, next) {
     }
   }
 
-  options.agent = new https.Agent(options);
   const request = https.request(options, (response) => {
       let data = '';
       response.on('data', (chunk) => {
