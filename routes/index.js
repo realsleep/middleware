@@ -35,7 +35,7 @@ router.get('/', function(req, res, next) {
 
       response.on('end', () => {
         const body = JSON.parse(data);
-        console.log(body);
+        res.json(body);
       });
   });
 
