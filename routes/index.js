@@ -16,14 +16,14 @@ router.get('/payment', function(req, res, next) {
     if (req.query.command == 'check') {
       options['path'] = `/kaspi/payment?command=check&txn_id=${req.query.txn_id}&account=${req.query.account}`;            
     } else {
-      options['path'] = `/kaspi/payment?command=pay&txn_id=${req.query.txn_id}&account=${req.query.account}`;
+      options['path'] = `/kaspi/payment?command=pay&txn_id=${req.query.txn_id}&account=${req.query.account}&txn_date=${req.query.txn_date}&sum=${req.query.sum}&service_id=${req.query.service_id}`;
     }
   } else {
     options['hostname'] = 'newpayments.ala-laundry.com';
     if (req.query.command == 'check') {
       options['path'] = `/kaspi/payment?command=check&txn_id=${req.query.txn_id}&account=${req.query.account}`;
     } else {
-      options['path'] = `/kaspi/payment?command=pay&txn_id=${req.query.txn_id}&account=${req.query.account}`;
+      options['path'] = `/kaspi/payment?command=pay&txn_id=${req.query.txn_id}&account=${req.query.account}&txn_date=${req.query.txn_date}&sum=${req.query.sum}&service_id=${req.query.service_id}`;
     }
   }
 
