@@ -27,10 +27,10 @@ https
       key: fs.readFileSync('key.pem'),
       cert: fs.readFileSync('cert.pem')
     },
-    appHTTPS
+    app
   )
-  .listen(portHTTPS, () => {
-    console.log(`App (HTTPS) listening on port ${portHTTPS}`)
+  .listen(443, () => {
+    console.log(`App (HTTPS) listening on port ${443}`)
   })
 
 /**
