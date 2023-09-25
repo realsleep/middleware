@@ -22,6 +22,9 @@ router.get('/', function(req, res, next) {
       });
     })
 
+    request.on('error', (error) => {
+      console.log('An error', error);
+    });
 
     request.end() 
   } else {
