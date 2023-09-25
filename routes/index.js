@@ -10,7 +10,11 @@ router.get('/', function(req, res, next) {
       res.redirect(`https://oldpayments.ala-laundry.com/kaspi/payment?command=check&txn_id=${req.query.txn_id}&account=${req.query.account}`);
     }
   } else {
-    res.redirect(`https://newpayments.ala-laundry.com`);
+    if (req.query.command == 'check') {
+      res.redirect(`https://newpayments.ala-laundry.com/kaspi/payment?command=check&txn_id=${req.query.txn_id}&account=${req.query.account}`);
+    } else {
+      res.redirect(`https://newpayments.ala-laundry.com/kaspi/payment?command=check&txn_id=${req.query.txn_id}&account=${req.query.account}`);
+    }
   }
 });
 
